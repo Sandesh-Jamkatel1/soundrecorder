@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Mixer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Music Mixer</h1>
+        
+        <!-- Background Music Section -->
+        <div class="section">
+            <h2>Import Background Music</h2>
+            <input type="file" id="bg-music" accept="audio/*">
+            <div class="controls">
+                <button id="play-bg">Play Background</button>
+                <button id="pause-bg">Pause</button>
+                <button id="stop-bg">Stop</button>
+                <label for="bg-volume">Volume</label>
+                <input type="range" id="bg-volume" min="0" max="1" step="0.01" value="0.5">
+                <label for="bg-loop">Loop</label>
+                <input type="checkbox" id="bg-loop">
+            </div>
+        </div>
+
+        <!-- Voice Recording Section -->
+        <div class="section">
+            <h2>Record Your Voice</h2>
+            <button id="record-voice">Record</button>
+            <button id="stop-recording" disabled>Stop Recording</button>
+            <div class="controls">
+                <label for="voice-volume">Volume</label>
+                <input type="range" id="voice-volume" min="0" max="1" step="0.01" value="1">
+                <label for="voice-loop">Loop</label>
+                <input type="checkbox" id="voice-loop">
+            </div>
+            <audio id="recorded-voice" controls></audio>
+        </div>
+
+        <!-- Mixing Section -->
+        <div class="section">
+            <h2>Mix and Download</h2>
+            <button id="mix-sound">Mix Sound</button>
+            <button id="download-mix" disabled>Download Mix</button>
+        </div>
+
+        <audio id="mixed-sound" controls></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
